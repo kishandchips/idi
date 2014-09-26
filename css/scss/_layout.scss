@@ -841,47 +841,6 @@ body {
 					/* IE9 SVG, needs conditional override of 'filter' to 'none' */
 				}
 
-				.gform_wrapper {
-					color: #fff;
-
-					.gform_heading {
-
-						.gform_title {
-							@include font-size(20);
-							
-							color: #fff;
-							text-transform: uppercase;
-							line-height: 1.2;
-						}
-
-						.gform_description {
-							
-							@include font-size(13);
-							line-height: 1.5;
-							margin-top: 15px;
-							display: block;
-						}
-					}
-
-					.selecter-selected{
-						color: #333;
-					}
-
-					.gform_body {
-
-						input[type=text], input[type=url], input[type=email], input[type=tel], input[type=number], input[type=password] {
-							border: 1px solid #c0c0c0;
-							padding: 15px;			
-							@include border-radius(2px);				
-						}
-
-						input[type=select] {
-							-webkit-appearance: none;
-							
-						}
-					}
-				}
-
 				&.gform_widget {
 
 					input[type=submit] {

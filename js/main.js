@@ -62,7 +62,7 @@
 			$(".gform_widget select").selecter();
 
 			if($.fn.colorbox){
-				if( $('#lightbox').length > 0 && $(window).width() > 900 ){
+				if( $('#lightbox').length > 0 && $(window).width() > 1000 ){
 					var delay = $('#lightbox').data('delay');
 					setTimeout(function() {
 						$.colorbox({

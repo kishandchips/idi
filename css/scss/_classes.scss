@@ -585,13 +585,38 @@ hr {
 #lightbox-inner {
 	@include box-shadow(0px 0px 30px #000);
 	background: #FFF;
-	max-width: 840px;
+	max-width: 1060px;
 
 	.span {
-		padding: 0;
+		padding: 0 25px;
 
-		&.five {
-			padding: 20px;
+		&.six {
+			width: 65%;
+		}
+
+		&.four {
+			width: 35%;
+			background: #3a5461;
+		}
+	}
+
+	.gform_wrapper ul li.gfield {
+		margin : 15px 0;
+	}
+
+	.contact-us-today {
+		border-top: 1px solid #cccccc;
+		@extend .clearfix;
+		background: url('../images/backgrounds/call-us-today.jpg') right bottom no-repeat;
+		padding-top: 13em;
+		padding: 10.4em 25px 2em;
+		margin: 0 -25px;		
+
+		p.number {
+			margin: 0.3em;
+			@include font-size(22);
+			color: #3a5461;
+			line-height: 1;
 		}
 	}
 
@@ -632,7 +657,7 @@ hr {
 			}
 
 			select {
-				background: url('../images/buttons/select_arrows.png') no-repeat right center; 
+				background: #FFF;
 				border: 1px solid #c0c0c0; 
 				cursor: pointer; 
 				display: block; 
@@ -643,11 +668,10 @@ hr {
 				position: relative; 
 				text-overflow: clip; 
 				z-index: 49; 
-				@include border-radius(2px);
+				@include border-radius(4px);
 				-webkit-appearance: none;
 				-moz-appearance:    none;
 				appearance:         none;			
-				@include box-shadow(0 2px 2px #cfcfcf);
 			}
 		}
 	}
@@ -1150,6 +1174,47 @@ $total_columns: length($columns);
 	}
 }
 
+.gform_wrapper {
+	color: #fff;
+
+	.gform_heading {
+
+		.gform_title {
+			@include font-size(20);
+			
+			color: #fff;
+			text-transform: uppercase;
+			line-height: 1.2;
+		}
+
+		.gform_description {
+			
+			@include font-size(13);
+			line-height: 1.5;
+			margin-top: 15px;
+			display: block;
+		}
+	}
+
+	.selecter-selected{
+		color: #333;
+	}
+
+	.gform_body {
+
+		input[type=text], input[type=url], input[type=email], input[type=tel], input[type=number], input[type=password] {
+			border: 1px solid #c0c0c0;
+			padding: 15px;			
+			@include border-radius(4px);				
+		}
+
+		input[type=select] {
+			-webkit-appearance: none;
+			
+		}
+	}
+}
+
 .selecter-element { *left: -999999px; position: absolute; opacity: 0; display: none; }
 
 .selecter {
@@ -1178,7 +1243,7 @@ $total_columns: length($columns);
 		position: relative; 
 		text-overflow: clip; 
 		z-index: 49; 
-		@include border-radius(2px);
+		@include border-radius(4px);
 	}	
 
 	.selecter-options { 
