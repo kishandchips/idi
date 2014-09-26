@@ -33,12 +33,13 @@ html {
 }
 
 body {
-	@include lucida-regular;
+	
 	height: 100%;
 	color: #030303;
 	@include font-size(14);
 	background: url('../images/backgrounds/site.jpg') center top no-repeat;
 	//-webkit-font-smoothing: antialiased;	
+	@include opensans;
 
 	@include device-width(12) {
 		background: #FFF;
@@ -54,6 +55,7 @@ body {
 	.call-icon {
 		width: 15%;
 		float: left;
+		margin-top: 7px;
 	}
 
 	.number{
@@ -85,6 +87,10 @@ body {
 		float: left;
 		@include borderbox;
 
+		@media screen and (max-width:440px){
+			width: 100%;
+		}		
+
 		.logo{
 			display: inline-block;
 			float: left;
@@ -96,11 +102,39 @@ body {
 		}	
 	}
 
+	#mobile-navigation-btn {
+		display: none;
+		position: absolute;
+		top:2em;
+		right: 0;
+
+		a {
+			display: inline-block;
+			padding:5px 10px;
+			text-transform: uppercase;
+			border: 1px solid #333;
+			@include border-radius(3px);
+
+			&:hover{
+				color: #fff;
+				background-color: #244787;
+			}
+		}
+
+		@include device-width(8) {
+			display: block;
+		}
+	}// .mob-menu	
+
 	.nav {
 		float: right;
 		width: 80%;
 		@include borderbox;
 		padding-top: 3em;
+
+		@media screen and (max-width:440px){
+			display: none;
+		}
 
 		.socials {
 			text-align: right;
@@ -116,26 +150,6 @@ body {
 		}
 	}
 
-	.mob-menu{
-		display: none;
-		position: absolute;
-		top:2em;
-		right: 2em;
-
-		a {
-			display: inline-block;
-			padding:5px 10px;
-			text-transform: uppercase;
-			border: 1px solid #333;
-			@include border-radius(3px);
-
-			&:hover{
-				color: #fff;
-				background-color: #244787;
-			}
-		}
-	}// .mob-menu
-	
 	.display{
 		display:inline-block;
 	}
@@ -144,6 +158,10 @@ body {
 		float:right;
 		margin: 0;
 		padding: 0;
+
+		@include device-width(8) {
+			display: none;
+		}		
 
 		li{
 			float:left;
@@ -194,6 +212,54 @@ body {
 
 		}
 	}
+
+	.call-iq {
+		@include device-width(8) {
+			width: 100%;
+		}
+	}
+}
+
+#mobilenav {
+	display: none;
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	li {
+
+		a {
+			display: block;
+			font-size: 1em;
+			text-transform: uppercase;		
+			border-bottom: 1px solid #e9e9e9;
+			border-top: 1px solid transparent;
+			line-height: 4;
+			padding: 0 0.5em;
+
+			&:after {
+				@extend [class*="icon-"];
+				@extend .icon-nav-arrow:before;
+				color: #49616d;
+				float: right;
+				margin-top: 20px;
+				margin-right: 5px;					
+			}
+
+			&:hover {
+				background: #238fbe;
+				color: #FFF;
+				text-decoration: none;
+
+				&:after {
+					color: #FFF;
+				}
+			}
+
+		}
+	}	
 }
 
 #header-image {
@@ -233,7 +299,7 @@ body {
 		span.title {
 
 			@include font-size(42);
-			padding: 0.5em 0.5em 2em 0.5em;
+			padding: 0.5em 0.5em 1.5em 0.5em;
 
 			@include device-width(7) {
 				@include font-size(18);
@@ -384,7 +450,7 @@ body {
 					 	border-top: 1px solid #ccc;
 
 					 	> a {
-					 		@include lucida-regular;
+					 		
 					 		line-height: 19px;
 						 	color: #3C5C75;
 						 	border-bottom: 1px solid transparent;
@@ -445,20 +511,19 @@ body {
 }
 
 #main {
-	background: #1f607c;
+	@extend .flexbox;
+
+	@include device-width(7) {
+		display: block;
+	}
 }
 
 #page {
 	// margin-top: 20px;
 	#content {
 		background: #FFF;
-		width: 75%;
+		width: 70%;
 		float: left;
-		@include box-sizing(border-box);
-
-		@include device-width(10) {
-				width: 70%;
-		}
 
 		@include device-width(7) {
 			width: 100%;
@@ -550,7 +615,7 @@ body {
 					td {
 						border: 1px solid #cfcfcf;
 						@include font-size(12);
-						@include lucida-regular;
+						
 						color: #555555;
 					}					
 				}
@@ -710,7 +775,8 @@ body {
 	}
 
 	#sidebar {
-		width: 25%;
+		background: #1f607c;
+		width: 30%;
 		float:right;
 		@include borderbox;
 
@@ -730,11 +796,10 @@ body {
 				padding: 7%;
 				margin-bottom: 20px;
 				border-bottom: 1px solid #5c7d8b;
+				@include box-sizing(border-box);
 
 				@include device-width(7) {
-					@include box-sizing(border-box);
-					width: 48%;
-					margin: 10px 1%;					
+					width: 100%;					
 					float: left;
 				}
 
@@ -783,14 +848,14 @@ body {
 
 						.gform_title {
 							@include font-size(20);
-							@include lucida-regular;
+							
 							color: #fff;
 							text-transform: uppercase;
 							line-height: 1.2;
 						}
 
 						.gform_description {
-							@include lucida-regular;
+							
 							@include font-size(13);
 							line-height: 1.5;
 							margin-top: 15px;
@@ -853,8 +918,13 @@ body {
 				}
 			}
 
-			#cloudIqPopupButton {
+			#cloudIqPopupButton, {
 				position: static !important;
+				margin-top: 10px;
+			}
+
+			.button {
+				margin-top: 10px;
 			}
 		}
 
@@ -1267,6 +1337,9 @@ body {
 	color: #666666;
 	padding: 15px;
 	border-top: 1px solid #cccccc;
+	margin-top: 2em;
+	@extend .clearfix; 
+	clear: both;
 
 	.container {
 	
@@ -1471,7 +1544,7 @@ body {
 	label, .label {
 		color: #FFF;
 		@include font-size(13);
-		@include lucida-regular;
+		
 		text-transform: uppercase;
 		margin-bottom: 10px;
 	}
@@ -1588,4 +1661,8 @@ body {
 			@include font-size(30);
 		}
 	}
+}
+
+#galleries {
+	@extend .clearfix;
 }

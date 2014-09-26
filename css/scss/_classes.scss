@@ -47,7 +47,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-	@include lucida-regular;
+	
 	@include font-size(18);
 
 	&.first {
@@ -56,12 +56,12 @@ h1 {
 }
 
 h2 {
-	@include lucida-regular;
+	
 	@include font-size(18);
 }
 
 h3 {
-	@include lucida-regular;
+	
 	text-transform: uppercase;
 	@include font-size(20);
 }
@@ -78,7 +78,7 @@ h5 {
 }
 
 p {
-	@include lucida-regular;
+	
 	color: #333333;
 	@include font-size(14);
 	line-height: 1.5;
@@ -656,7 +656,7 @@ hr {
 #follow {
 	a {
 		@include font-size(14);
-		@include lucida-regular;
+		
 		color: #123d8d;
 		display: block;
 		margin-bottom: 15px;
@@ -1020,7 +1020,6 @@ $total_columns: length($columns);
 	}		
 
 	label {
-		@include lucida-bold;
 	    display: block;
 		@include font-size(14);
 		margin-bottom: 0px;
@@ -1029,11 +1028,11 @@ $total_columns: length($columns);
 
 	input[type=submit] {
 	    -webkit-appearance: none;
-	    @include lucida-regular;
+	    
 	}
 
 	input[type=text], input[type=url], input[type=email], input[type=tel], input[type=number], input[type=password] {
-		@include lucida-regular;
+		
 		border: 1px solid #aaaaaa;
 		height: 30px;
 		color: #333333;
@@ -1294,7 +1293,7 @@ $total_columns: length($columns);
 		@extend .clearfix;
 
 		.description {
-			@include lucida-regular;
+			
 			@include font-size(13);
 		}
 		

@@ -107,3 +107,7 @@
 	display: -ms-flexbox;
 	display: flex;
 }
+
+.flexbox {
+	@include flexbox;
+}

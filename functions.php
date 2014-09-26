@@ -20,9 +20,13 @@ function idi_setup() {
 		'primary_footer' => __( 'Primary Footer Menu', 'idi' )
 	) );	
 
+	add_theme_support( 'post-thumbnails' ); 
+
 	add_editor_style('css/editor-styles.css');
 
 	add_filter('widget_text', 'do_shortcode');
+
+	add_image_size( 'student-gal', 240, 150, true);
 }
 endif; // idi_setup
 
@@ -47,30 +51,6 @@ if (function_exists('register_sidebar')) {
 		'before_title' => '<h2 class="offscreen">',
 		'after_title' => '</h2>',
 	));	
-	register_sidebar(array(
-		'name'=> 'Footer First Column',
-		'id' => 'footer-first',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h2 class="offscreen">',
-		'after_title' => '</h2>',
-	));
-	register_sidebar(array(
-		'name'=> 'Footer Second Column',
-		'id' => 'footer-second',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));
-	register_sidebar(array(
-		'name'=> 'Footer Third Column',
-		'id' => 'footer-third',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	));	
 }
 
 add_action('tiny_mce_before_init', 'custom_tinymce_options');
@@ -87,10 +67,10 @@ add_action('init', 'set_custom_post_types');
 if(!function_exists('set_custom_post_types')) {
 	function set_custom_post_types(){
 		require( get_template_directory() . '/inc/custom_post_type.php' );
-
-		$news = new Custom_Post_Type( 'Message', 
+	   	
+	   	$student_gallery = new Custom_Post_Type( 'Student Galleries', 
 	 		array(
-	 			'rewrite' => array( 'with_front' => false, 'slug' => 'messages'),
+	 			'rewrite' => array( 'with_front' => false, 'slug' => 'student-gallery' ),
 	 			'capability_type' => 'post',
 	 		 	'publicly_queryable' => true,
 	   			'has_archive' => true, 
@@ -98,9 +78,9 @@ if(!function_exists('set_custom_post_types')) {
 	    		'exclude_from_search' => false,
 	    		'menu_position' => null,
 	    		'supports' => array('title', 'thumbnail', 'editor'),
-	    		'plural' => 'Messages'
+	    		'plural' => 'Student Galleries'
 	   		)
-	   	);		   		   	
+	   	);			   	
 
 	 	// global $wp_rewrite;
 		// $wp_rewrite->flush_rules();

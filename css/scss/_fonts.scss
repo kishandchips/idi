@@ -1,21 +1,26 @@
-@mixin lucida-regular {
-	// font-family:'Lucida$ Sans W01 Roman';
-	font-family: Verdana,Arial, Helvetica, sans-serif;
-	font-weight: normal;
+@mixin opensans {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
 }
 
-.lucida-regular {
-	// @include lucida-regular;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-
+.opensans {
+	@include opensans;
 }
 
-@mixin lucida-bold {
-	//font-family:'Lucida$ Sans W01 Bold';
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-weight: bold;
+@mixin opensans-light {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
 }
 
-.lucida-bold {
-	@include lucida-bold;
+.opensans-light {
+	@include opensans-light;
+}
+
+@mixin opensans-bold {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+}
+
+.opensans-bold {
+	@include opensans-bold;
 }

@@ -81,6 +81,10 @@ cc.initialise({
 						<img src="<?php bloginfo('template_url')?>/images/logos/idi.png" alt="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
 					</a>				
 				</div>
+				<div id="mobile-navigation-btn">
+					<a href="#">Menu</a>
+				</div>
+				
 				<div class="nav">
 					<div class="span ten socials">
 						<div class="fb-like" data-href="https://www.facebook.com/InteractiveDesignInstitute" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="true" data-send="false"></div>
@@ -89,13 +93,10 @@ cc.initialise({
 						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 						</div>
 					</div>
-					<div class="span two-third">
-						<div class="mob-menu">
-							<a href="#">Menu</a>
-						</div>					
+					<div class="span two-third">					
 						<?php wp_nav_menu( array( 'theme_location' => 'primary_header', 'menu_class' => 'menu clearfix', 'container' => false ) ); ?>						
 					</div>
-					<div class="span one-third">
+					<div class="span one-third call-iq">
 						<div class="call-us">
 							<i class="call-icon"></i>						
 							<p class="number">Call Free: <span class="rTapNumber74358">0800 917 1118</span></p>
@@ -106,5 +107,10 @@ cc.initialise({
 				</div>			
 			</div>		
 		</header><!-- #masthead -->
+		<div id="mobilenav">
+			<div class="container">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary_header', 'menu_class' => 'mobile-navigation clearfix', 'container' => false ) ); ?>	
+			</div>
+		</div>
 
 		<div id="main" role="main" class="container">
