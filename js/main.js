@@ -35,9 +35,6 @@
 				$(this).toggleClass('open');
 			});
 		
-
-			$('#content h1:first, #content .row:first').addClass('first');	
-
 			$('a[href^=#].scroll-to-btn').click(function(){
 				var target = $($(this).attr('href'));
 				var offsetTop = (target.length != 0) ? target.offset().top : 0;

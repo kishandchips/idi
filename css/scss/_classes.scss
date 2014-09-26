@@ -824,6 +824,10 @@ menu, ol, ul {
 /* =============================================================================
    Grid
    ========================================================================== */
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 
 .row {
 
@@ -1221,10 +1225,6 @@ $total_columns: length($columns);
 	display: block;
 	position: relative;
 	z-index: 1;
-	background-color: #ffffff; // Old browsers
-	@include filter-gradient(#ffffff, #f1f1f1, vertical); // IE6-9
-	@include background-image(linear-gradient(top,  #ffffff 0%,#f1f1f1 100%));
-	@include box-shadow(0 2px 2px #cfcfcf);
 
 
 	@include device-width(5) {
@@ -1243,7 +1243,10 @@ $total_columns: length($columns);
 		position: relative; 
 		text-overflow: clip; 
 		z-index: 49; 
+		background-color: #ffffff; // Old browsers
 		@include border-radius(4px);
+		@include filter-gradient(#ffffff, #f1f1f1, vertical); // IE6-9
+		@include background-image(linear-gradient(top,  #ffffff 0%,#f1f1f1 100%));		
 	}	
 
 	.selecter-options { 

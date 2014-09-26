@@ -225,6 +225,14 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
+	"\/front-page.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/front-page.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
+		},
 	"\/functions.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -271,6 +279,16 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/buttons\/select_arrows.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1229,
+		"inputAbbreviatedPath": "\/images\/buttons\/select_arrows.png",
+		"outputAbbreviatedPath": "\/images\/buttons\/select_arrows.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/colorbox\/border.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -308,6 +326,16 @@
 		"initialSize": 182,
 		"inputAbbreviatedPath": "\/images\/colorbox\/overlay.png",
 		"outputAbbreviatedPath": "\/images\/colorbox\/overlay.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/logos\/footer.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6386,
+		"inputAbbreviatedPath": "\/images\/logos\/footer.png",
+		"outputAbbreviatedPath": "\/images\/logos\/footer.png",
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},

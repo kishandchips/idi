@@ -14,7 +14,6 @@
 get_header(); ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>	
-
 	<div id="content">
 
 		<?php if(get_field('slideshow')): ?>
@@ -80,6 +79,33 @@ get_header(); ?>
 				<?php get_template_part('inc/content'); ?>
 			<?php endif; ?>
 		</div>
+
+		<?php 
+			$args = array(
+		        'post_type' => 'student_galleries',
+		        'showposts' => 8		
+			);
+		
+			$query = new WP_Query( $args );
+		 ?>
+
+	 	<?php if ( $query->have_posts() ) : ?>
+			<div id="galleries">
+			<a class="right" href="<?php bloginfo('url'); ?>/student-gallery/">See All</a>
+			<h2 class="front-page-title">Student Gallery</h2>
+
+		 	<?php while ($query->have_posts()) : $query->the_post(); ?>	
+					<div class="span two-and-half">
+						<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
+						<a class="gallery" rel="gal" href="<?php echo $image[0]; ?>">
+							<?php the_post_thumbnail('student-gal', array('class' => 'scale')); ?>
+						</a>
+					</div>
+			<?php endwhile; ?>
+			</div>
+		<?php endif; ?>
+
+
 		<footer id="footer"  role="contentinfo">
 			<div class="footer-innnnnnner">
 				<a href="<?php bloginfo( 'url' ); ?>" title="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">

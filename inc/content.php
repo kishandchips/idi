@@ -13,9 +13,9 @@
  
 		<div class="row <?php echo $layout; ?>" style="<?php the_sub_field("css"); ?>">
 			<div class="images-bar">
-				
-				<img class="scale <?php if( get_sub_field('first-image') ):?>not-chosen<?php endif; ?>" src="<?php the_sub_field("image"); ?>" alt="<?php the_sub_field("title"); ?>">
-
+				<?php if(get_sub_field('title')): ?>
+					<h1 class="section-title"><?php the_sub_field("title"); ?></h1>
+				<?php endif; ?>				
 				<?php 
 					$images = get_sub_field('images');
 					if( $images ): ?>
@@ -25,7 +25,7 @@
 				<?php endif; ?>				
 			</div>
 			<div class="content-wrapper">
-				<h1><?php the_sub_field("title"); ?></h1>
+				
 				<?php the_sub_field("img-content"); ?>
 			</div>
 		</div>
