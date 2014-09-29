@@ -18,6 +18,7 @@
 			wp_enqueue_script('jquery', get_template_directory_uri().'/js/libs/jquery.min.js');
 			wp_enqueue_script('scroller', get_template_directory_uri().'/js/plugins/jquery.scroller.js');	
 			wp_enqueue_script('easing', get_template_directory_uri().'/js/plugins/jquery.easing.js');
+			wp_enqueue_script('cycle', get_template_directory_uri().'/js/plugins/jquery.cycle2.min.js');	
 			wp_enqueue_script('selecter', get_template_directory_uri().'/js/plugins/jquery.fs.selecter.min.js');
 			wp_enqueue_script('prettyPhoto', get_template_directory_uri().'/js/plugins/jquery.colorbox-min.js');
 			wp_enqueue_script('main', get_template_directory_uri().'/js/main.js');

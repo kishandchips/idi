@@ -97,7 +97,7 @@
 
 	
 
-	<div class="columns clearfix">
+	<div class="columns clearfix <?php the_sub_field('classname'); ?>">
 		<?php $total_columns = count( get_sub_field('column-content')); ?>
 		<?php while (has_sub_field('column-content')) : ?>
 

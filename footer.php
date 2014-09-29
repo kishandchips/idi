@@ -10,7 +10,7 @@
 					<?php the_field('lightbox_content', 'option'); ?>
 				</div>
 				<div class="span four">
-					<?php gravity_form(2, false, false, false, '', true); ?>
+					<?php gravity_form(3, false, false, false, '', true); ?>
 				</div>
 			</div>			
 		</div>

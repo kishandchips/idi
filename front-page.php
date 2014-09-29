@@ -91,7 +91,7 @@ get_header(); ?>
 
 	 	<?php if ( $query->have_posts() ) : ?>
 			<div id="galleries">
-			<a class="right" href="<?php bloginfo('url'); ?>/student-gallery/">See All</a>
+			<a class="front-page-link" href="<?php bloginfo('url'); ?>/student-gallery/">See All</a>
 			<h2 class="front-page-title">Student Gallery</h2>
 
 		 	<?php while ($query->have_posts()) : $query->the_post(); ?>	
@@ -104,8 +104,28 @@ get_header(); ?>
 			<?php endwhile; ?>
 			</div>
 		<?php endif; ?>
+		<?php wp_reset_query(); ?>
 
-
+			<div id="quotes">
+				<div class="span four break-on-mobile">
+					<?php $image = get_field('image', 'option'); ?>
+					<img class="scale" src="<?php echo $image['url']; ?>" alt="">
+				</div>
+				<div class="span six break-on-mobile">
+					<?php if(get_field('quotes', 'option')): ?>
+						<ul class="cycle-slideshow" data-cycle-slides="> li">
+						<?php while(has_sub_field('quotes', 'option')): ?>
+							<li>
+								<blockquote>
+									<p><?php the_sub_field('quote_text'); ?></p>
+									<p><?php the_sub_field('quote_author'); ?></p>
+								</blockquote>
+							</li>
+						<?php endwhile; ?>
+						</ul>
+					<?php endif; ?>			
+				</div>
+			</div>
 		<footer id="footer"  role="contentinfo">
 			<div class="footer-innnnnnner">
 				<a href="<?php bloginfo( 'url' ); ?>" title="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
