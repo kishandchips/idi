@@ -30,7 +30,7 @@ class CallBack_Widget extends WP_Widget {
                               <p class="number">From Mobiles: <span class="rTapNumber74358">03303 320 030</span></p>
                               <p class="number">International: <span class="rTapNumber74357">+44(0) 1875 320 597</span></p>
                         </div>    
-                        <a href="#" class="button">Request call back</a>                  
+                        <!-- <a href="#" class="button">Request call back</a>     -->              
                         <!-- script type="text/javascript" id="cloudiq_callme">(function(){function e(){var e=document.createElement("script");e.id="cloudiqCallme";e.type="text/javascript";e.async=true;e.src="https://platform.cloud-iq.com/widgets/callme/callme_25098/javascript/cloudiq_callme.js";var t=document.getElementById("cloudiq_callme");t.parentNode.insertBefore(e,t)}if(window.attachEvent)window.attachEvent("onload",e);else window.addEventListener("load",e,false)})()
                         </script -->
                         

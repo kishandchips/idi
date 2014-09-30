@@ -1,2 +1,2 @@
-HenleyMBA-Landing
+Interactive Design Institute
 ============================
