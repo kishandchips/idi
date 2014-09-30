@@ -57,11 +57,12 @@ body {
 	.call-icon {
 		width: 15%;
 		float: left;
-		margin-top: 7px;
+		margin-top: 13px;
 
 		@include device-width(10) {
 			width: 0;
 			display: none;
+			margin-top: 7px;
 		}
 
 		@include device-width(8) {
@@ -75,6 +76,7 @@ body {
 		width: 85%;
 		float: right;
 		margin: 0;
+		@include font-size(16);
 
 		@include device-width(12) {
 			font-size: 1.2rem;
@@ -712,29 +714,11 @@ body {
 
 			.accordion-item {
 				position: relative;
-				padding-left: 25px;
+				padding-left: 25px;	
 
-				&:after {
-					content: "";
-					display: block;
-					width: 11px;
-					height: 8px;
-					background: url('../images/misc/faq-arrow.png');
-					position: absolute;
-					left: 0px;
-					top: 5px;		
-				}	
-
-				&.open:after {
-					content: "";
-					display: block;
-					width: 11px;
-					height: 8px;
-					background: url('../images/misc/faq-arrow_up.png');
-					position: absolute;
-					left: 0px;
-					top: 5px;		
-				}					
+				@include device-width(4) {
+					padding-left: 0;
+				}				
 
 				.trigger {
 					@include font-size(18);
@@ -742,11 +726,30 @@ body {
 
 					&:hover {
 						text-decoration: underline;
-					}					
+					}		
+
+					&:after {
+						@extend [class*="icon-"];
+						@extend .icon-chevron-down:before;
+						font-size: 1.2rem;
+						margin: 15px;					
+					}								
+				}
+
+				&.open {
+					.trigger {
+						&:after {
+							@extend [class*="icon-"];
+							@extend .icon-chevron-up:before;	
+							font-size: 1.2rem;
+							margin: 15px;														
+						}						
+					}
 				}
 
 				.content {
 					display: none;
+					padding: 0.5em 0px;
 
 					@include device-width(5) {
 						display: block;

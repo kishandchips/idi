@@ -54,7 +54,12 @@
 
 		<div id="acc-<?php echo $e; ?>" class="row <?php echo $layout; ?>" style="<?php the_sub_field("css"); ?>">
 			<div class="images-bar">
-				<img class="scale" src="<?php the_sub_field("image"); ?>" alt="<?php the_sub_field("title"); ?>">
+				<?php if(get_sub_field('title')): ?>
+					<h1 class="section-title"><?php the_sub_field("title"); ?></h1>
+				<?php endif; ?>		
+				<?php if(the_sub_field("image")): ?>	
+					<img class="scale" src="<?php the_sub_field("image"); ?>" alt="<?php the_sub_field("title"); ?>">
+				<?php endif; ?>
 				<?php 
 					$images = get_sub_field('images');
 					if( $images ): ?>
@@ -64,7 +69,6 @@
 				<?php endif; ?>				
 			</div>	
 			<div class="content-wrapper">		
-				<h1><?php the_sub_field("title"); ?></h1>
 				<?php if(get_sub_field('items')): $i = 0; ?>
 					<?php while(has_sub_field('items')): $i++; ?>	
 						<?php if( get_sub_field('subtitle') ):?>
