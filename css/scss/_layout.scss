@@ -57,12 +57,11 @@ body {
 	.call-icon {
 		width: 15%;
 		float: left;
-		margin-top: 13px;
+		margin-top: 7px;
 
 		@include device-width(10) {
 			width: 0;
 			display: none;
-			margin-top: 7px;
 		}
 
 		@include device-width(8) {
@@ -76,7 +75,6 @@ body {
 		width: 85%;
 		float: right;
 		margin: 0;
-		@include font-size(16);
 
 		@include device-width(12) {
 			font-size: 1.2rem;
@@ -917,8 +915,20 @@ body {
 				@extend .clearfix;
 				padding-top: 10px;
 
-				.call-icon:before, .number {
+				.call-icon:before {
 					color: #FFF;
+					margin-top: 13px;
+						
+					@include device-width(10) {
+						margin-top: 7px;
+					}
+
+				}
+
+				.number {
+					color: #FFF;
+					@include font-size(16);
+					margin: 0;
 				}
 
 
