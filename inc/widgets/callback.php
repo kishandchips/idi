@@ -21,7 +21,7 @@ class CallBack_Widget extends WP_Widget {
                     <div class="callback-box">
                         <div class="request-text">
                             <h2>
-                                <?php _e('<strong>Request a call back</strong><br>Speak to our tutors'); ?>
+                                <?php _e('<strong>Call today</strong><br> and speak to a course advisor'); ?>
                             </h2>
                         </div>
                         <div class="call-us">

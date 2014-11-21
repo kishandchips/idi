@@ -27,6 +27,7 @@ function idi_setup() {
 	add_filter('widget_text', 'do_shortcode');
 
 	add_image_size( 'student-gal', 240, 150, true);
+	add_image_size( 'header-slide', 818, 529, true);
 }
 endif; // idi_setup
 

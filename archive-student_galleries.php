@@ -15,7 +15,7 @@ get_header(); ?>
 
 		<?php 
 			$args = array(
-				'page_id' => 214			
+				'page_id' => 214	
 			);
 		
 		$query = new WP_Query( $args );
@@ -40,7 +40,12 @@ get_header(); ?>
 											<?php $i = 0; ?>
 											<?php while (the_repeater_field('slideshow')) : ?>					
 											<div class="scroll-item <?php if($i == 0) echo 'current'; ?>" data-id="<?php echo $i;?>">
-												<img class="scale" src="<?php the_sub_field('image'); ?>" alt="<?php the_sub_field('title'); ?>">
+												<?php 
+													$image = get_sub_field('image');
+													$size = 'header-slide'; // (thumbnail, medium, large, full or custom size)
+													$thumb = wp_get_attachment_image_src( $image, $size );
+												?>
+												<img class="scale" src="<?php echo $thumb[0]; ?>" alt="<?php the_sub_field('title'); ?>">
 												<span class="title" style="background-color: <?php the_sub_field('title_background_colour'); ?>;">
 													<?php the_sub_field('title'); ?>
 												</span> 
@@ -84,9 +89,14 @@ get_header(); ?>
 		<h1 class="title"><?php the_title(); ?></h1>
 
 		<?php wp_reset_query(); ?>
-
-
+	
 		<div id="galleries">		
+		    <?php 
+			    global $wp_query;
+				$args = array_merge( $wp_query->query_vars, array( 'posts_per_page' => 99 ) );
+				query_posts( $args );
+			?>     
+
 			<?php while ( have_posts() ) : the_post(); ?>	
 				<div class="span one-third">
 					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
